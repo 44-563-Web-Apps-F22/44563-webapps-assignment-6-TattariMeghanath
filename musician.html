@@ -57,6 +57,8 @@ function checkguess (){
         alert("You got it Right")
     } else {
         wrong=wrong+1
+        if(wrong==3)
+        alert("Sorry, game over")
         out.innerHTML = "Wrongs inputs entered:"+wrong
         alert("wrong musician")
     }
