@@ -28,25 +28,65 @@
         </div>
         <input type="button" onclick="discount()" value="Apply discount">
     </form>
-
     <p id="result">This text will be replaced </p>
     </div>
 </div>
 <script>
-    function discount()
-    {   
+    function discount() {   
         let basevalue=document.getElementById("basevalue").value;
         let value=document.getElementById("discountvalue").value;
         let result="";
-        for(let i=1;i<6;i++)
-        {
+        for(let i=1;i<6;i++)  {
            let discount=(basevalue*i)-((basevalue*i)*value/100);
-           result=result+" "+discount;  
-}
+           result=result+" "+discount;  }
         document.getElementById("result").innerHTML="Discounted amounts for base "+basevalue+" are "+result;
     
     }
 </script>
+<div class>
+    <form>
+        <div class="form-group">
+        <input type="radio" id="one" name="opp" onclick="chooseOp()" value="times">
+        <label for="one">*</label> <br>
+        </div>
+        <div class="form-group">
+        <input type="radio" id="two" name="opp" onclick="chooseOp()" value="divide">
+        <label for="second">/</label> <br>
+        </div>
+        <input type="radio" id="three" name="opp" onclick="chooseOp()" value="exponent">
+        <label for="three">**</label> <br>
+    </form>
+    
+    
+    
+    <p id="result2">Text gets replaced </p>
+    </div>
+    </div>
+    <script> 
+        function chooseOp()
+        {
+           let base=document.getElementById("basevalue").value;
+           let discount=document.getElementById("discountvalue").value;
+           let times=document.getElementById("one").checked;
+           let divide=document.getElementById("two").checked;
+           let exponent=document.getElementById("three").checked;
+           let results=0;
+           if(times)
+           {
+            results=base*discount;
+           }
+           else if(divide)
+           {
+            results=base/discount;
+           }
+           else if(exponent)
+           {
+            results=base**discount
+           }
+           document.getElementById("result2").innerHTML=results
+        
+        }
+    </script>
 
 
 
